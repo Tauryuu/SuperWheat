@@ -34,7 +34,7 @@ public class SWPlayerListener extends PlayerListener {
 	    
 	    //If the data for the crop isn't 7 (Isn't fully grown)
 	    //And the player doesn't have the bypass permission...
-	    if((byte)block.getData() != 7 && !plugin.hasPermission(player, "Wheaty.disallow.crop.destroying"))
+	    if((byte)block.getData() != 7 && !plugin.hasPermission(player, "SuperWheat.disallow.crop.destroying"))
 	    
 	        //Cancel the event, so the player never really left-clicked the block
 		//and the crop doesn't get destroyed
@@ -42,13 +42,13 @@ public class SWPlayerListener extends PlayerListener {
 					
 		//Send a message to that player, notifying them that the crop isn't
 		//fully grown so they can't destroy it
-		player.sendMessage("�6[Wheaty] That crop isn't fully grown yet!");
+		player.sendMessage("�6[SuperWheat] That crop isn't fully grown yet!");
 		//block.setTypeIdAndData(59, (byte)block.getData(), true);
 				
 					
 	    //Else, if the data for the block IS 7 (The crop is fully grown) and the player
 	    //has the permission node so the crop automatically re-grows after being harvested...
-	    } else if((byte)block.getData() == 7 && plugin.hasPermission(player, "Wheaty.allow.crop.regrowing")){
+	    } else if((byte)block.getData() == 7 && plugin.hasPermission(player, "SuperWheat.allow.crop.regrowing")){
 	        
 		//Cancel the event, so the crop was never actually destroyed.
 		//Instead of having the crop destroyed, we just set it's data value to 0
